@@ -40,9 +40,9 @@ public class ListBasics {
 
         // To do something with each element of a list, use a “for each” loop:
 
-        for(String word : magicWords) {
-            System.out.println("I say " + word + "!!");
-        }
+        // for(String word : magicWords) {
+        //     System.out.println("I say " + word + "!!");
+        // }
 
         // Things to note here:
         //
@@ -61,13 +61,13 @@ public class ListBasics {
         for(int number : magicNumbers) {
             sum += number;
         }
-        System.out.println("sum = " + sum);
+        //System.out.println("sum = " + sum);
 
         // You can nest a loop inside another loop:
 
         List<String> people = List.of("sally", "fred");
-        for(String person : people) {
-            for(String word : magicWords) {
+         for(String person : people){
+             for(String word : magicWords) {
                 System.out.println(person + " says " + word + "!");
             }
         }
@@ -129,7 +129,7 @@ public class ListBasics {
         // OK then, what happens if we do this? Try running this main method and
         // see what happens:
 
-        String willNotWork = magicWords.get(magicWords.size());
+       // String willNotWork = magicWords.get(magicWords.size());
 
         // If you run it the code, note that the program stops here, and none
         // of the lines below will run!
@@ -158,7 +158,7 @@ public class ListBasics {
         // Java also gives us the ability to _change_ what's in a list! Here’s
         // how you add a new element to the end of the list:
 
-        magicWords.add("expelliarmus");
+        // magicWords.add("expelliarmus");
 
         // Oops! What happened?! That code compiles. Why doesn't it run?
         //
@@ -178,12 +178,12 @@ public class ListBasics {
 
         String thing0 = "Mac";
         String thing1 = thing0;
-        System.out.println("thing0 = " + thing0);  // Now they're both "Mac"
-        System.out.println("thing1 = " + thing1);
+       System.out.println("thing0 = " + thing0);  // Now they're both "Mac"
+       System.out.println("thing1 = " + thing1);
 
         thing1 += "alester";
-        System.out.println("thing1 = " + thing1);  // Now it's the new value "Macalester", but
-        System.out.println("thing0 = " + thing0);  // this one is still "Mac"
+       System.out.println("thing1 = " + thing1);  // Now it's the new value "Macalester", but
+       System.out.println("thing0 = " + thing0);  // this one is still "Mac"
 
         // Are lists mutable or immutable in Java? The answer is: both! Some
         // lists are mutable, and some are not.
@@ -196,7 +196,7 @@ public class ListBasics {
         // way is this:
 
         List<String> mutableList = new ArrayList<>();
-        System.out.println("mutableList = " + mutableList);
+       System.out.println("mutableList = " + mutableList);
 
         // For now, you can think of “new ArrayList<>()” as meaning “a new empty
         // mutable list.” We will get into what each part of that syntax means
@@ -206,22 +206,22 @@ public class ListBasics {
 
         mutableList.add("school bus");
         mutableList.add("rhinoceros");
-        System.out.println("mutableList = " + mutableList);
+       System.out.println("mutableList = " + mutableList);
 
         mutableList.add("kitchen sink");
         mutableList.add(2, "turbo unicorn");  // 2 here means “at index 2”
-        System.out.println("mutableList = " + mutableList);
+       System.out.println("mutableList = " + mutableList);
 
         // We can change elements:
 
         mutableList.set(1, "angry rhinoceros");
-        System.out.println("mutableList = " + mutableList);
+       System.out.println("mutableList = " + mutableList);
 
         // We can remove elements:
 
         mutableList.remove(3);            // Remove by position
         mutableList.remove("school bus"); // Remove by value
-        System.out.println("mutableList = " + mutableList);
+       System.out.println("mutableList = " + mutableList);
 
         // Remember when we got the exception above trying to add new magic
         // words? To do that, we'll need to create a mutable copy of the list.
@@ -232,7 +232,7 @@ public class ListBasics {
             magicWordsCopy.add(word);
         }
         magicWordsCopy.add("expelliarmus");
-        System.out.println("magicWordsCopy = " + magicWordsCopy);
+       System.out.println("magicWordsCopy = " + magicWordsCopy);
 
         // But wait! This is unnecessarily complex. What we just did is so
         // common, Java gives us a helpful addAll() method to do it:
@@ -240,7 +240,7 @@ public class ListBasics {
         List<String> betterMagicWordsCopy = new ArrayList<>();
         betterMagicWordsCopy.addAll(magicWords);  // nice!
         betterMagicWordsCopy.add("expelliarmus");
-        System.out.println("betterMagicWordsCopy = " + betterMagicWordsCopy);
+       System.out.println("betterMagicWordsCopy = " + betterMagicWordsCopy);
 
         // And in fact, creating a new list and then adding all the elements of
         // another list is so common there is yet _another_ shortcut for it!
@@ -249,14 +249,14 @@ public class ListBasics {
 
         List<String> bestMagicWordsCopy = new ArrayList<>(magicWords);  // nicer!
         bestMagicWordsCopy.add("expelliarmus");
-        System.out.println("bestMagicWordsCopy = " + bestMagicWordsCopy);
+       System.out.println("bestMagicWordsCopy = " + bestMagicWordsCopy);
 
         // There is a lot more to learn about lists in Java, but this is plenty
         // to get us started with some interesting activities and labs.
     }
 
     private static void section(String title) {
-        System.out.println();
+       System.out.println();
         System.out.println("–––––– " + title + " ––––––");
     }
 }
